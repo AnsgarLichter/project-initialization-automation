@@ -23,7 +23,7 @@ readme.write("# " + repositoryName)
 readme.close()
 
 #TODO: read from config file
-user = Github("e231fd5675aeab7a1855f2b8dec8903c6f9adb08").get_user()
+user = Github("").get_user()
 gitRepository = user.create_repo(repositoryName)
 
 origin = repository.create_remote('origin', gitRepository.ssh_url)
