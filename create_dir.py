@@ -6,7 +6,7 @@ import git
 repositoriesPath = r'C:\Users\Ansgar\Development\repositories'
 
 #TODO: get from console
-repositoryName = 'test'
+repositoryName = 'test2'
 
 repositoryPath = repositoriesPath + '\\' + repositoryName
 if os.path.exists(repositoryPath):
@@ -18,12 +18,11 @@ repositoryDirectory = os.path.join(repositoriesPath, repositoryName)
 repository = git.Repo.init(repositoryDirectory)
 
 readmePath = repositoryPath + "\\" + "README.md"
-readme = open( readmePath, "w+")
-readme.write("# " + repositoryName)
-readme.close()
+with open( readmePath, "w+") as readme:
+    readme.write("# " + repositoryName)
 
 #TODO: read from config file
-user = Github("").get_user()
+user = Github("fc30637b7f3edda0e62b641da075b6e42fa2a11e").get_user()
 gitRepository = user.create_repo(repositoryName)
 
 origin = repository.create_remote('origin', gitRepository.ssh_url)
