@@ -1,12 +1,15 @@
 import os
 from github import Github
 import git
+import json
 
-#TODO: read from config file
-repositoriesPath = r'C:\Users\Ansgar\Development\repositories'
+with open("params.txt") as f:
+    parameters = json.load(f)
 
-#TODO: get from console
-repositoryName = 'test2'
+repositoriesPath = parameters["repositoriesPath"]
+githubAuthToken = parameters["githubAuthToken"]
+
+repositoryName = input("Please enter your repository name: ")
 
 repositoryPath = repositoriesPath + '\\' + repositoryName
 if os.path.exists(repositoryPath):
@@ -22,7 +25,7 @@ with open( readmePath, "w+") as readme:
     readme.write("# " + repositoryName)
 
 #TODO: read from config file
-user = Github("fc30637b7f3edda0e62b641da075b6e42fa2a11e").get_user()
+user = Github(githubAuthToken).get_user()
 gitRepository = user.create_repo(repositoryName)
 
 origin = repository.create_remote('origin', gitRepository.ssh_url)

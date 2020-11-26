@@ -1,0 +1,4 @@
+{
+	"githubAuthToken": "fc30637b7f3edda0e62b641da075b6e42fa2a11e",
+	"repositoriesPath": "C:\\Users\\Ansgar\\Development\\repositories"
+}
