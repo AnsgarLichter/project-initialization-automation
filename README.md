@@ -10,9 +10,7 @@ This project has the target to automatically execute the following steps:
 * Add the origin to the repository.
 * Add initial readme with project name.
 * Push initial commit to the online repository.
+* If the project creation failed cleanup the created directories and files
 
 ## TODOs:
-* Create config file
-* Read projects directory from config file
-* Read github access token from config file
-* Read project name from console
+* Exception Handling for cleanup
