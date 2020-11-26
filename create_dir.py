@@ -16,7 +16,7 @@ if os.path.exists(repositoryPath):
     print("Directory already existing")
     quit()
 
-# Create Local Repository
+
 repositoryDirectory = os.path.join(repositoriesPath, repositoryName)
 repository = git.Repo.init(repositoryDirectory)
 
@@ -24,7 +24,7 @@ readmePath = repositoryPath + "\\" + "README.md"
 with open( readmePath, "w+") as readme:
     readme.write("# " + repositoryName)
 
-#TODO: read from config file
+
 user = Github(githubAuthToken).get_user()
 gitRepository = user.create_repo(repositoryName)
 
