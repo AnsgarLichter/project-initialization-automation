@@ -1,15 +1,15 @@
 from package.config import Config
 from package.repository import Repository
 
+from github import GithubException
 
-if __name__ == '__main__':
-    config = Config()
-    repository = Repository(config)
+config = Config()
+repository = Repository(config)
 
-    #TODO: Cleanup created files if repository creation failed
-    #TODO: Create Readme for the repository itself
+try:
+    repository.create()
+    print("Successfully created GitHub repository {}!".format(config.getRepositoryName()))
 
-    if repository.isExisting():
-        print("Successfully created GitHub repository {}!".format(config.getRepositoryName()))
-    else:
+except GithubException:
+        repository.deleteLocal()
         print("Unfortunately the repository couldn't be created")
