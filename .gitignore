@@ -2,3 +2,5 @@
 .venv
 
 params.txt
+
+package/__pycache__
