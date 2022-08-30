@@ -4,7 +4,6 @@ import git
 from package import constants
 
 from github import Github, GithubException
-from package.config import Config
 
 class RepositoryFactory:
     def __init__(self, github: Github) -> None:
