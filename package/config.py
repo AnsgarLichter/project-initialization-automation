@@ -1,23 +1,20 @@
 import json
 
 class Config:
-    repositoriesPath = ""
-    githubAuthToken = ""
+    
+    PARAMETER_PATH_TO_REPOSITORIES = "repositoriesPath"
+    PARAMETER_GITHUB_AUTHENTICATION_TOKEN = "githubAuthToken"
+
 
     def __init__(self):
         with open("params.txt") as f:
             parameters = json.load(f)
 
-        self.repositoriesPath = parameters["repositoriesPath"]
-        self.githubAuthToken = parameters["githubAuthToken"]
-        self.repositoryName = input("Please enter your repository name: ")
+        self.repositoriesPath = parameters[Config.PARAMETER_PATH_TO_REPOSITORIES]
+        self.githubAuthToken = parameters[Config.PARAMETER_GITHUB_AUTHENTICATION_TOKEN]
 
-    def getRepositoriesPath(self):
-        
+    def get_repositories_path(self) -> str:        
         return self.repositoriesPath
 
-    def getAuthToken(self):
+    def get_authentication_token(self) -> str:
         return self.githubAuthToken
-
-    def getRepositoryName(self):
-        return self.repositoryName

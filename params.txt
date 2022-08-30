@@ -1,4 +1,4 @@
 {
-	"githubAuthToken": "YOUR_GITHUB_AUTHENTICATION_TOKEN",
-	"repositoriesPath": "YOUR_LOCAL_PATH_WHERE_YOUR_REPOSITORIES_ARE_SAVED"
+	"githubAuthToken": "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",
+	"repositoriesPath": "C:\\Users\\Ansgar\\Documents\\Development\\repositories"
 }
