@@ -1,6 +1,8 @@
 import os
 import git
 
+from package import constants
+
 from github import Github, GithubException
 from package.config import Config
 
@@ -20,7 +22,7 @@ class RepositoryFactory:
         repository = git.Repo.init(repository_path)
         github_repository = self.__user.create_repo(repository_name)
 
-        repository.create_remote("origin", github_repository.ssh_url)
+        repository.create_remote(constants.REMOTE_ORIGIN, github_repository.ssh_url)
         return repository
 
     def __validate(self, repository_name: str, repository_base_path: str) -> None:
